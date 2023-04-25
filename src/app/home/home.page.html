@@ -1,20 +1,60 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col
+        class="center-avatar"
+        size="3"
+        style="
+          min-height: 100vh;
+          border: 0.1px solid grey;
+          border-left: none;
+          border-top: none;
+          border-bottom: none;
+        "
+      >
+        <ion-list style="background: transparent" lines="none">
+          <ion-item
+            style="--background: transparent"
+            *ngFor="let item of [].constructor(10); let i=index"
+          >
+            <ion-avatar slot="start" style="height: 20px; width: 20px">
+              <img src="assets/icon/favicon.png" />
+            </ion-avatar>
+            <ion-label class="ion-hide-md-down">Item Avatar {{i+1}}</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+      <ion-col size="9" sizeLg="6" style="min-height: 100vh">
+        <ion-list style="background: transparent" lines="none">
+          <ion-item
+            style="
+              --background: transparent;
+              border: 0.1px solid grey;
+              border-right: none;
+              border-top: none;
+              border-left: none;
+            "
+            *ngFor="let item of [].constructor(50); let i=index;let last = last"
+            [ngStyle]="{'border-bottom': last ? 'none' : 'border: 0.1px solid grey' }"
+          >
+            <ion-avatar slot="start" style="height: 20px; width: 20px">
+              <img src="assets/icon/favicon.png" />
+            </ion-avatar>
+            <ion-label class="ion-hide-md-down">Item Avatar {{i+1}}</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+      <ion-col
+        class="ion-hide-lg-down"
+        size="3"
+        style="
+          min-height: 100vh;
+          border: 0.1px solid grey;
+          border-right: none;
+          border-top: none;
+          border-bottom: none;
+        "
+      ></ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
